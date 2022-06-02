@@ -11,6 +11,7 @@ import Nigel from "./pages/NigelPage";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 
+import 'bootstrap/dist/css/bootstrap.css';
 export default function Website() {
   return (
     <BrowserRouter>
