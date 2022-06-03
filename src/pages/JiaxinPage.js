@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
+import '../style/nav.css'
 
 function Jiaxin() {
     const initialVlaues = {name: "", age: "", gender: "", email: "", remark: "", nric: ""};
@@ -62,60 +63,60 @@ function Jiaxin() {
         }
         return errors;
     }
-    
+        
     return(
+        
         <div className='App'>
             <pre>{ JSON.stringify(formValues, undefined, 2) }</pre>
             <form onSubmit={handleSubmit}>
                 <h1>Information form</h1>
-                <div className='ui divider'></div>
-                <div className='ui form'></div>
-                <div className='field'>
-                    <label>Name:</label>{' '}
-                    <input type='text' name='name' placeholder='name' value={ formValues.name }
-                    onChange={handleChange}/>
+                <div class="form-group" style={{textAlign: "center"}}>
+                    <label for="name">Name:</label>
+                    <input style={{margin: "auto", display: "block", width: "40%"}} type="text" name="name" class="form-control" id="name" placeholder="name" value={ formValues.name } onChange={handleChange}/>
                     <p style={{color: "red"}}>{formErrors.name}</p>
                 </div>
-                <div className='field'>
-                    <label>Age:</label>{' '}
-                    <input type='number' min="0" name='age' placeholder='age' value={ formValues.age }
-                    onChange={handleChange}/>
+                <div class="form-group" style={{textAlign: "center"}}>
+                    <label for="name">Age:</label>
+                    <input style={{margin: "auto", display: "block", width: "40%"}} type="number" min="0" name="age" class="form-control" id="age" placeholder="age" value={ formValues.age } onChange={handleChange}/>
                     <p style={{color: "red"}}>{formErrors.age}</p>
                 </div>
-                <div className='field'>
-                    <label>Gender:</label>{' '}
+                <div class="form-group" style={{textAlign: "center"}}>
+                    <label for="gender">Gender:</label>
                     <select 
+                    style={{margin: "auto", display: "block", width: "40%"}}
                     type="text"
                     name="gender"
                     value={ formValues.gender }
+                    class="form-control" id="age"
                     onChange={handleChange}>
-                        <option value="">-----------</option>
+                        <option value="">----------------------------------------------------------------</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                     <p style={{color: "red"}}>{formErrors.gender}</p>
                 </div>
                 <div className='field'>
-                    <label>NRIC:</label>{' '}
-                    <input type='text' name='nric' placeholder='NRIC' value={ formValues.nric }
+                    <label for="nric">NRIC:</label>
+                    <input style={{margin: "auto", display: "block", width: "40%"}} class="form-control" id="nric" type='text' name='nric' placeholder='NRIC' value={ formValues.nric }
                     onChange={handleChange}/>
                     <p style={{color: "red"}}>{formErrors.nric}</p>
                 </div>
                 <div className='field'>
-                    <label>Email:</label>{' '}
-                    <input type='text' name='email' placeholder='email' value={ formValues.email }
+                    <label for="email">Email:</label>
+                    <input style={{margin: "auto", display: "block", width: "40%"}} class="form-control" type='text' name='email' placeholder='email' value={ formValues.email }
                     onChange={handleChange}/>
                     <p style={{color: "red"}}>{formErrors.email}</p>
                 </div>
                 <div className='field'>
-                    <label>Remark:</label><br></br>
-                    <textarea type='text' name='remark' placeholder='remark' value={ formValues.remark }
+                    <label for="remark">Remark:</label><br></br>
+                    <textarea style={{margin: "auto", display: "block", width: "40%"}} class="form-control" type='text' name='remark' placeholder='remark' value={ formValues.remark }
                     onChange={handleChange}/>
                 </div>    
                 <br></br>
-                <button type='submit' className='btn btn-primary'>Submit</button>
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        </div>
+        </div>    
     )
 }
 

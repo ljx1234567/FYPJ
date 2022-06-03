@@ -8,7 +8,6 @@ function Nigel() {
       fetchData()
   }, [])
 
-
   const fetchData = () => {
       fetch(URL)
           .then((res) =>
