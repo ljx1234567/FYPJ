@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function App() {
+function Home() {
   const [backendData, setBackendData] = useState([{}])
 
   useEffect(() => {
@@ -18,21 +18,21 @@ function App() {
     const [formErrors, setFormErrors] = useState({})
     const [isSubmit, setIsSubmit] = useState(false);
 
-    const handleChange = (e) => {
-        console.log(e.target);
-        const { name, value } = e.target
-        setFormValues({...formValues, [name]:value});
-        console.log(formValues)
-    }
+  const handleChange = (e) => {
+      console.log(e.target);
+      const { name, value } = e.target
+      setFormValues({...formValues, [name]:value});
+      console.log(formValues)
+  }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-        if(Object.keys(formErrors).length === 0 && isSubmit){
-            
-        }
-    }
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      setFormErrors(validate(formValues));
+      setIsSubmit(true);
+      if(Object.keys(formErrors).length === 0 && isSubmit){
+          
+      }
+  }
 
     useEffect(() => {
         console.log(formErrors);
@@ -84,4 +84,4 @@ function App() {
   )
 }
   
-  export default App;
+  export default Home;
